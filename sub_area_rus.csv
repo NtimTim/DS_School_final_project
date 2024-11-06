@@ -1,0 +1,147 @@
+id,sub_area,sub_area_rus
+0,Ajeroport,Аэропорт
+1,Akademicheskoe,Академический
+2,Alekseevskoe,Алексеевский
+3,Altuf'evskoe,Алтуфьевский
+4,Arbat,Арбат
+5,Babushkinskoe,Бабушкинский
+6,Basmannoe,Басманный
+7,Begovoe,Беговой
+8,Beskudnikovskoe,Бескудниковский
+9,Bibirevo,Бибирево
+10,Birjulevo Vostochnoe,Бирюлёво Восточное
+11,Birjulevo Zapadnoe,Бирюлёво Западное
+12,Bogorodskoe,Богородское
+13,Brateevo,Братеево
+14,Butyrskoe,Бутырский
+15,Caricyno,Царицыно
+16,Cheremushki,Черёмушки
+17,Chertanovo Central'noe,Чертаново Центральное
+18,Chertanovo Juzhnoe,Чертаново Южное
+19,Chertanovo Severnoe,Чертаново Северное
+20,Danilovskoe,Даниловский
+21,Dmitrovskoe,Дмитровский
+22,Donskoe,Донской
+23,Dorogomilovo,Дорогомилово
+24,Filevskij Park,Филёвский Парк
+25,Fili Davydkovo,Фили-Давыдково
+26,Gagarinskoe,Гагаринский
+27,Gol'janovo,Гольяново
+28,Golovinskoe,Головинский
+29,Hamovniki,Хамовники
+30,Horoshevo-Mnevniki,Хорошёво-Мнёвники
+31,Horoshevskoe,Хорошёвский
+32,Hovrino,Ховрино
+33,Ivanovskoe,Ивановское
+34,Izmajlovo,Измайлово
+35,Jakimanka,Якиманка
+36,Jaroslavskoe,Ярославский
+37,Jasenevo,Ясенево
+38,Juzhnoe Butovo,Южное Бутово
+39,Juzhnoe Medvedkovo,Южное Медведково
+40,Juzhnoe Tushino,Южное Тушино
+41,Juzhnoportovoe,Южнопортовый
+42,Kapotnja,Капотня
+43,Kon'kovo,Коньково
+44,Koptevo,Коптево
+45,Kosino-Uhtomskoe,Косино-Ухтомский
+46,Kotlovka,Котловка
+47,Krasnosel'skoe,Красносельский
+48,Krjukovo,Крюково
+49,Krylatskoe,Крылатское
+50,Kuncevo,Кунцево
+51,Kurkino,Куркино
+52,Kuz'minki,Кузьминки
+53,Lefortovo,Лефортово
+54,Levoberezhnoe,Левобережный
+55,Lianozovo,Лианозово
+56,Ljublino,Люблино
+57,Lomonosovskoe,Ломоносовский
+58,Losinoostrovskoe,Лосиноостровский
+59,Mar'ina Roshha,Марьина Роща
+60,Mar'ino,Марьино
+61,Marfino,Марфино
+62,Matushkino,Матушкино
+63,Meshhanskoe,Мещанский
+64,Metrogorodok,Метрогородок
+65,Mitino,Митино
+66,Molzhaninovskoe,Молжаниновский
+67,Moskvorech'e-Saburovo,Москворечье-Сабурово
+68,Mozhajskoe,Можайский
+69,Nagatino-Sadovniki,Нагатино-Садовники
+70,Nagatinskij Zaton,Нагатинскиий затон
+71,Nagornoe,Нагорный
+72,Nekrasovka,Некрасовка
+73,Nizhegorodskoe,Нижегородский
+74,Novo-Peredelkino,Ново-Переделкино
+75,Novogireevo,Новогиреево
+76,Novokosino,Новокосино
+77,Obruchevskoe,Обручевский
+78,Ochakovo-Matveevskoe,Очаково-Матвеевское
+79,Orehovo-Borisovo Juzhnoe,Орехово-Борисово Южное
+80,Orehovo-Borisovo Severnoe,Орехово-Борисово Северное
+81,Ostankinskoe,Останкинский
+82,Otradnoe,Отрадное
+83,Pechatniki,Печатники
+84,Perovo,Перово
+85,Pokrovskoe Streshnevo,Покровское-Стрешнево
+86,Poselenie Desjonovskoe,Десёновское
+87,Poselenie Filimonkovskoe,Филимонковское
+88,Poselenie Kievskij,Киевский
+89,Poselenie Klenovskoe,Клёновское
+90,Poselenie Kokoshkino,Кокошкино
+91,Poselenie Krasnopahorskoe,Краснопахорское
+92,Poselenie Marushkinskoe,Марушкинское
+93,Poselenie Mihajlovo-Jarcevskoe,Михайлово-Ярцевское
+94,Poselenie Moskovskij,Московский
+95,Poselenie Mosrentgen,Мосрентген
+96,Poselenie Novofedorovskoe,Новофёдоровское
+97,Poselenie Pervomajskoe,Первомайское
+98,Poselenie Rjazanovskoe,Рязановское
+99,Poselenie Rogovskoe,Роговское
+100,Poselenie Shhapovskoe,Щаповское
+101,Poselenie Shherbinka,Щербинка
+102,Poselenie Sosenskoe,Сосенское
+103,Poselenie Vnukovskoe,Внуковское
+104,Poselenie Voronovskoe,Вороновское
+105,Poselenie Voskresenskoe,Воскресенское
+106,Preobrazhenskoe,Преображенское
+107,Presnenskoe,Пресненский
+108,Prospekt Vernadskogo,Проспект Вернадского
+109,Ramenki,Раменки
+110,Rjazanskij,Рязанский
+111,Rostokino,Ростокино
+112,Savelki,Савёлки
+113,Savelovskoe,Савёловский
+114,Severnoe,Северный
+115,Severnoe Butovo,Северное Бутово
+116,Severnoe Izmajlovo,Северное Измайлово
+117,Severnoe Medvedkovo,Северное Медведково
+118,Severnoe Tushino,Северное Тушино
+119,Shhukino,Щукино
+120,Silino,Силино
+121,Sokol,Сокол
+122,Sokol'niki,Сокольники
+123,Sokolinaja Gora,Соколиная Гора
+124,Solncevo,Солнцево
+125,Staroe Krjukovo,Старое Крюково
+126,Strogino,Строгино
+127,Sviblovo,Свиблово
+128,Taganskoe,Таганский
+129,Tekstil'shhiki,Текстильщики
+130,Teplyj Stan,Тёплый Стан
+131,Timirjazevskoe,Тимирязевский
+132,Troickij okrug,Троицк
+133,Troparevo-Nikulino,Тропарёво-Никулино
+134,Tverskoe,Тверской
+135,Veshnjaki,Вешняки
+136,Vnukovo,Внуково
+137,Vojkovskoe,Войковский
+138,Vostochnoe,Восточный
+139,Vostochnoe Degunino,Восточное Дегунино
+140,Vostochnoe Izmajlovo,Восточное Измайлово
+141,Vyhino-Zhulebino,Выхино-Жулебино
+142,Zamoskvorech'e,Замоскворечье
+143,Zapadnoe Degunino,Западное Дегунино
+144,Zjablikovo,Зябликово
+145,Zjuzino,Зюзино
