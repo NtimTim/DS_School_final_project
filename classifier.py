@@ -8,6 +8,15 @@ train_df = pd.read_csv('train.csv')
 train_df['state'].fillna(train_df['state'].mode().iloc[0],inplace=True)
 train_df['product_type_num'] = np.where(train_df['product_type'].isnull(),0 ,np.where(train_df['product_type']=='Investment',1,2))
 
+train_df['full_sq'] = np.where(train_df['full_sq']<train_df['life_sq'],train_df['life_sq'],train_df['full_sq'])
+train_df.drop(train_df.index[17932], inplace=True) 
+train_df['life_sq'] = np.where(train_df['life_sq']<train_df['full_sq']*0.3,train_df['full_sq']*0.5,train_df['life_sq'])
+train_df['floor'] = np.where(train_df['floor']==77,7,train_df['floor'])
+train_df['max_floor'] = np.where(train_df['max_floor']<train_df['floor'],train_df['floor'],train_df['max_floor'])
+train_df['num_room']= np.where(train_df['num_room']>10,1,train_df['num_room'])
+train_df['kitch_sq'] =  np.where(train_df['kitch_sq']>=train_df['full_sq']*0.5, train_df['full_sq']*0.3, train_df['kitch_sq'])
+
+
 lbl = LabelEncoder()
 lbl.fit(list(train_df['sub_area'].values)) 
 train_df['sub_area_num'] = lbl.transform(list(train_df['sub_area'].values))

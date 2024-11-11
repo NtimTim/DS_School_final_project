@@ -4,6 +4,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+
 from dash import Input, Output, State, callback
 import plotly.graph_objects as go
 import pandas as pd
@@ -48,6 +49,7 @@ with open('./model.pkl','rb') as model_pkl:
 with open('./classifier.pkl','rb') as classifier_pkl:
 	classifier=pickle.load(classifier_pkl)
 
+
 app.layout = html.Div(
 
 children=[
@@ -83,29 +85,27 @@ children=[
   	html.Div(dcc.Dropdown(id='state', options=[1,2,3,4], value = 1)),	
 	
 		html.Label('Количество комнат (num_room)'),
-	html.Div(dcc.Input(id='num_room', type='number', inputMode='numeric', min = 1, max = 20, value = 1)),
+	html.Div(dcc.Input(id='num_room', type='number', inputMode='numeric', min = 1, max = 10, value = 1)),
 	    html.Label('Общая площадь(full_sq)'),
-	html.Div(dcc.Input(id='full_sq', type='number', inputMode='numeric', min = 1, max = 1000, value = 40)),
+	html.Div(dcc.Input(id='full_sq', type='number', inputMode='numeric', min = 1, max = 6000, value = 40)),
 		html.Label('Жилая площадь(life_sq)'),
-	html.Div(dcc.Input(id='life_sq', type='number', inputMode='numeric', min = 1, max = 1000, value = 30)),
+	html.Div(dcc.Input(id='life_sq', type='number', inputMode='numeric', min = 1, max = 7500, value = 30)),
 		html.Label('Площадь кухни (kitch_sq)'),
-	html.Div(dcc.Input(id='kitch_sq', type='number', inputMode='numeric', min = 1, max = 1000, value = 10)),
+	html.Div(dcc.Input(id='kitch_sq', type='number', inputMode='numeric', min = 1, max = 100, value = 10)),
 
 		html.Label('Этаж (floor)'),
-	html.Div(dcc.Input(id='floor', type='number', inputMode='numeric', min = 1, max = 100, value = 3)),
+	html.Div(dcc.Input(id='floor', type='number', inputMode='numeric', min = 1, max = 50, value = 3)),
 		html.Label('Этажность (max_floor)'),
-	html.Div(dcc.Input(id='max_floor', type='number', inputMode='numeric', min = 1, max = 100, value = 5)),
-	
-
-#		html.Label('Время до метро (metro_min_walk)'),
-#	html.Div(dcc.Input(id='metro_min_walk', type='number', inputMode='numeric', min = 0, max = 713, value = 3)),	
+	html.Div(dcc.Input(id='max_floor', type='number', inputMode='numeric', min = 1, max = 50, value = 5)),
+		
 		html.Label('Расстояние до метро в км (metro_km_walk)'),
 	html.Div(dcc.Input(id='metro_km_walk', type='number', inputMode='numeric', min = 0, max = 60, value = 3)),	
-#		html.Label('Время до метро на автомобиле (metro_min_avto)'),
-#	html.Div(dcc.Input(id='metro_min_avto', type='number', inputMode='numeric', min = 0, max = 62, value = 5)),	
+#		html.Label('Время до метро (metro_min_walk)'),
+#	html.Div(dcc.Input(id='metro_min_walk', type='number', inputMode='numeric', min = 0, max = 713, value = 3)),
 #		html.Label('Расстояние до метро на автомобиле (metro_km_avto)'),
 #	html.Div(dcc.Input(id='metro_km_avto', type='number', inputMode='numeric', min = 0, max = 74, value = 7)),
-	
+#		html.Label('Время до метро на автомобиле (metro_min_avto)'),
+#	html.Div(dcc.Input(id='metro_min_avto', type='number', inputMode='numeric', min = 0, max = 62, value = 5)),		
 #		html.Label('Расстояние до Третьего транспортного кольца (ttk_km)'),
 #	html.Div(dcc.Input(id='ttk_km', type='number', inputMode='numeric', min = 0, max = 100, value = 11)),	
 	html.Br(),
@@ -118,21 +118,21 @@ children=[
 	html.Br(),
 	html.Br(),
 	html.Br(),
-	html.Br(),
-	html.Br(),
+
     html.Button('Предсказать стоимость квартиры по выбранным параметрам', id='submit-val', n_clicks=0),
     html.Div(id='container-button-basic',
              children='Введите данные и нажмите на кнопку'),
 
-html.Label('--------------------------'),#вместо разделителя
-html.Label('--------------------------'),#вместо разделителя
+	html.Br(),
+	html.Br(),
 
 		html.Label('Цена квартиры для предсказания расположения(price)'),
 	html.Div(dcc.Input(id='price', type='number', inputMode='numeric', min = 0, max = 1000000000, value = 5000000)),
 			 
     html.Button('Предсказать расположение квартиры по указанной цене', id='submit2-val', n_clicks=0),
     html.Div(id='container2-button-basic',
-             children='Введите данные и нажмите на кнопку, при этом ранее выбранное местоположение игнорируется')			 			 
+             children='Введите данные и нажмите на кнопку, при этом ранее выбранное местоположение игнорируется'),
+		 
 ], style={'columnCount': 3})
 
 @callback(
@@ -172,13 +172,6 @@ metro_km_walk_value):
  #		"metro_km_avto": metro_km_avto_value,
  #      "metro_min_walk": metro_min_walk_value,
  		"metro_km_walk": metro_km_walk_value,
-                #  ,'public_healthcare_km','hospital_beds_raion'
-                #  ,'nuclear_reactor_km'
-                #  ,'sport_count_3000'
-                #  ,'cafe_count_5000_price_2500'
-                #  ,'cafe_count_5000_price_high'
-                #  ,'cafe_count_2000'
-                #  ,'cafe_count_3000'
 		"sub_area_num": df[df['sub_area_rus']==sub_area_value].id
 		}
 		X_test = pd.DataFrame([X_test_dict])
@@ -197,7 +190,7 @@ def update_dropdown(clickData):
 @callback(Output('sub_area_map','figure'),
 		  Input('sub_area','value'))
 def update_dropdown(value):
-	name_df['color']=np.where(gdf['NAME']==value, '10','1')
+	name_df['color']=np.where(name_df['NAME']==value, '10','1')
 	fig = px.choropleth_mapbox(
 		name_df,
         geojson=mo, 
@@ -247,24 +240,13 @@ metro_km_walk_value):
 #    	 "metro_km_avto": metro_km_avto_value,
 #        "metro_min_walk": metro_min_walk_value,
 		"metro_km_walk": metro_km_walk_value,
-                #  ,'public_healthcare_km','hospital_beds_raion'
-                #  ,'nuclear_reactor_km'
-                #  ,'sport_count_3000'
-                #  ,'cafe_count_5000_price_2500'
-                #  ,'cafe_count_5000_price_high'
-                #  ,'cafe_count_2000'
-                #  ,'cafe_count_3000'
 		"price_doc": price_value
 		}
 		X_test = pd.DataFrame([X_test_dict])
 		y_pred = classifier.predict(X_test)
-		sub_area_1 = df[df['id']==y_pred[0][0]].sub_area_rus.astype(str)
-		print(sub_area_1)
+		sub_area_1 = df[df['id']==y_pred[0][0]].sub_area_rus.values[0]
 		sub_area_text = 'Месторасположение квартиры : ' + sub_area_1
-		sub_area_text_2 = str(sub_area_1)
-		pos_= sub_area_text_2.index(' ')
-		pos = sub_area_text_2.index('Name:')
-		return sub_area_text, sub_area_text_2[pos_+4:pos-1] 
+		return sub_area_text, sub_area_1
 
 @callback(
     Output('full_sq', 'value'),
@@ -272,10 +254,8 @@ metro_km_walk_value):
 	Input('life_sq', 'value'),
 	Input('kitch_sq', 'value'))
 def update_output(full_sq_value,life_sq_value,kitch_sq_value):
-	if life_sq_value > full_sq_value:
-		result = life_sq_value
-	elif kitch_sq_value > full_sq_value:
-		result = kitch_sq_value
+	if life_sq_value+kitch_sq_value > full_sq_value:
+		result = life_sq_value+kitch_sq_value
 	else:
 		result = full_sq_value
 	return result

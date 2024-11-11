@@ -7,6 +7,16 @@ import pickle
 train_df = pd.read_csv('train.csv')
 train_df['state'].fillna(train_df['state'].mode().iloc[0],inplace=True)
 train_df['product_type_num'] = np.where(train_df['product_type'].isnull(),0 ,np.where(train_df['product_type']=='Investment',1,2))
+train_df.drop(train_df.index[7457], inplace=True)
+
+train_df['full_sq'] = np.where(train_df['full_sq']<train_df['life_sq'],train_df['life_sq'],train_df['full_sq'])
+train_df.drop(train_df.index[17932], inplace=True) 
+train_df['life_sq'] = np.where(train_df['life_sq']<train_df['full_sq']*0.3,train_df['full_sq']*0.5,train_df['life_sq'])
+train_df['floor'] = np.where(train_df['floor']==77,7,train_df['floor'])
+train_df['max_floor'] = np.where(train_df['max_floor']<train_df['floor'],train_df['floor'],train_df['max_floor'])
+train_df['num_room']= np.where(train_df['num_room']>10,1,train_df['num_room'])
+train_df['kitch_sq'] =  np.where(train_df['kitch_sq']>=train_df['full_sq']*0.5, train_df['full_sq']*0.3, train_df['kitch_sq'])
+
 train_df['full_sq'] = np.log(train_df['full_sq']+1)
 #numeric_data = train_df.select_dtypes([np.number])
 #numeric_data_mean = numeric_data.mean()
@@ -38,13 +48,6 @@ X_train = train_df[[
 #                'metro_km_avto',
 #                'metro_min_walk',
 				'metro_km_walk',
-                #  ,'public_healthcare_km','hospital_beds_raion'
-                #  ,'nuclear_reactor_km'
-                #  ,'sport_count_3000'
-                #  ,'cafe_count_5000_price_2500'
-                #  ,'cafe_count_5000_price_high'
-                #  ,'cafe_count_2000'
-                #  ,'cafe_count_3000' 
                   'sub_area_num'
                  ]]
 train_dataset = cb.Pool(X_train, np.log(y_train+1))
